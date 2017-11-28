@@ -1,6 +1,6 @@
 ---
 title: 标题
-tags: [test, vue, js]
+tags: [test, vue, qq]
 date: 2017年11月27日22:36:45
 ---
 ## Slider 滑块
