@@ -2,10 +2,7 @@
 import Vue from 'vue';
 import App from '../themes/app.vue'
 import VueRouter from 'vue-router'
-import {routes} from './router.config.js'
-const Foo = { template: '<div>foo</div>' }
-routes.push({ path: '/foo', component: Foo })
-console.log(routes)
+import routes from './router'
 Vue.use(VueRouter)
 const router = new VueRouter({
   routes
