@@ -1,3 +1,3 @@
 <template>
-  <h1>Vexo2</h1>
+  <h1>header</h1>
 </template>
