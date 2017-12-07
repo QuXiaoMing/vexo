@@ -69,6 +69,10 @@ fs.readdir(path.resolve(process.cwd(), './resource'), (err, files) => {
   files.forEach(src => {
     parseMD(src, data, tags)
   });
+  /**
+   * TODO
+   * dataBase 不存在的情况
+   */
   fs.writeFile(path.resolve(process.cwd(), './dataBase/articleList.json'), JSON.stringify({
     data,
     tags
