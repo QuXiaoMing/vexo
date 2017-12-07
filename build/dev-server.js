@@ -21,25 +21,6 @@ const autoOpenBrowser = true
 
 const app = express()
 
-// mock假数据
-// const appData = require('../mockdata.json')
-// let self = appData.self
-// let friend = appData.friend
-// let apiRoutes = express.Router()
-
-// apiRoutes.get('/self', (req, res) => {
-//   res.json({
-//     data: self,
-//   })
-// })
-// apiRoutes.get('/friends', (req, res) => {
-//   res.json({
-//     data: friend,
-//   })
-// })
-
-// app.use('/api', apiRoutes)
-
 const compiler = webpack(webpackConfig)
 
 const devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -58,15 +39,6 @@ compiler.plugin('compilation', function (compilation) {
     cb()
   })
 })
-
-// proxy api requests
-// Object.keys(proxyTable).forEach(function (context) {
-//   const options = proxyTable[context]
-//   if (typeof options === 'string') {
-//     options = { target: options }
-//   }
-//   app.use(proxyMiddleware(options.filter || context, options))
-// })
 
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())

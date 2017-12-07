@@ -37,7 +37,14 @@ module.exports = {
         test: /\.md$/,
         use: [
           {
-            loader: "vue-markdown-loader"
+            loader: "vue-markdown-loader",
+            options: {
+              wrapper: 'article',
+              preprocess: function (markdownIt, source) {
+                // do any thing
+                return source.replace(/^---[\s\S]*?---/g, '<div id="post-header"></div>')
+              },
+            }
           }
         ]
       },
