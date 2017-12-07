@@ -10,7 +10,7 @@ module.exports = {
   entry: [resolve('/src/main.js')],
   output: {
     path: resolve('/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle-[hash].js'
   },
   resolve: {
     alias: {
@@ -42,7 +42,7 @@ module.exports = {
               wrapper: 'article',
               preprocess: function (markdownIt, source) {
                 // do any thing
-                return source.replace(/^---[\s\S]*?---/g, '<div id="post-header"></div>')
+                return source.replace(/^---[\s\S]*?---/g, '<div id="post-header"></div>\n')
               },
             }
           }

@@ -10,6 +10,7 @@ function addArticles () {
   data.forEach((e) => {
     children.push({
       path: e.src.replace('.md', ''),
+      meta: e,
       component: loadFile('resource', e.src)
     })
   })

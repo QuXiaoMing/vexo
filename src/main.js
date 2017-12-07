@@ -11,6 +11,11 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes
 })
+router.afterEach((to, from) => {
+  // ...
+  console.log('afterEach', to.meta)
+  // document.querySelector('#post-header').innerHTML = JSON.stringify(to.meta)
+})
 console.log(router)
 new Vue({
   el: '#app',
