@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const compileMD = require('./compile-md')
 var path = require('path')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -41,8 +42,7 @@ module.exports = {
             options: {
               wrapper: 'article',
               preprocess: function (markdownIt, source) {
-                // do any thing
-                return source.replace(/^---[\s\S]*?---/g, '<div id="post-header"></div>\n')
+                return compileMD(source)
               },
             }
           }
