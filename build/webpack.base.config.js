@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const compileMD = require('./compile-md')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -57,21 +58,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              modules: true
-            }
-          },
-          {
-            loader: "postcss-loader"
-          }
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('css/[name].css'),
+  ]
 }

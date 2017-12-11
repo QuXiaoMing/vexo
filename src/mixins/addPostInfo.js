@@ -2,9 +2,11 @@
  * Add Title, Tags, Date for post pages
  * $route.meta is Required
  */
+import hljs from 'highlight.js'
 export default {
   mounted () {
     this.setInfo()
+    hljs.initHighlightingOnLoad()
   },
   methods: {
     setInfo () {
@@ -21,7 +23,7 @@ export default {
 
       let $info = document.createElement('div')
       let _tags = tags && tags.map((e) => {
-        return `<a href="/#/tags/${e}">${e}</a>`
+        return ` <a href="/#/tags/${e}">${e}</a>`
       }).join(',')
       $info.innerHTML = '<span class="tags">'
         + _tags
