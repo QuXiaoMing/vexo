@@ -4,7 +4,8 @@ import App from '../themes/app.vue'
 import VueRouter from 'vue-router'
 import routes from './router'
 import {Modules} from './modules'
-import 'highlight.js/styles/atelier-plateau-dark.css'
+import normalize from 'normalize.css'
+import 'highlight.js/styles/atom-one-light.css'
 import '../themes/assets/styles/default.scss'
 Object.keys(Modules).forEach((key) => {
   Vue.component(`vexo-${key}`, Modules[key])
