@@ -4,7 +4,7 @@
  */
 import hljs from 'highlight.js'
 export default {
-  mounted () {
+  mounted() {
     this.setInfo()
     this.$nextTick(() => {
       // hljs.initHighlightingOnLoad()
@@ -12,18 +12,27 @@ export default {
     })
   },
   methods: {
-    highlightCode () {
-      let code = document.querySelectorAll('article code')
+    highlightCode() {
+      let code = Array.from(document.querySelectorAll('article code'))
       if (code && code.length) {
-        code.forEach(element => {
-          hljs.highlightBlock(element)
+        code.map(element => {
+          if (element.childNodes.length > 1) {
+            hljs.highlightBlock(element)
+          } else {
+            console.log(element.classList)
+            element.classList.add('code-inline')
+          }
         })
       }
     },
-    setInfo () {
+    setInfo() {
       let infoBox = document.createElement('div')
       infoBox.id = 'post-header'
-      let { title, tags, date } = this.$route.meta
+      let {
+        title,
+        tags,
+        date
+      } = this.$route.meta
 
       if (title) {
         let $title = document.createElement('h1')
@@ -36,11 +45,11 @@ export default {
       let _tags = tags && tags.map((e) => {
         return ` <a href="/#/tags/${e}">${e}</a>`
       }).join(',')
-      $info.innerHTML = '<span class="tags">'
-        + _tags
-        + '</span> | <span class="date">'
-        + date || ""
-        + '</span>'
+      $info.innerHTML = '<span class="tags">' +
+        _tags +
+        '</span> | <span class="date">' +
+        date || "" +
+        '</span>'
       $info.className = 'info'
       infoBox.appendChild($info)
 

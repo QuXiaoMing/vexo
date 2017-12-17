@@ -35,7 +35,8 @@ html a {
   margin: 170px auto 0;
 }
 
-.language-html, .hljs {
+.code-inline,
+.hljs {
   font-size: 0.9em;
   padding: 1em;
   background-color: #f8f8f8;
@@ -45,7 +46,11 @@ html a {
     color: #2973b7
   }
 }
-
+.code-inline {
+  padding: 2px;
+  margin: 0 0.5em;
+  color: #e96900;
+}
 .post-container {
   #post-header {
     text-align: center;
