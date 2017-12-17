@@ -27,7 +27,7 @@ export default {
       }).join(',')
       $info.innerHTML = '<span class="tags">'
         + _tags
-        + '</span><span class="date">'
+        + '</span> | <span class="date">'
         + date || ""
         + '</span>'
       $info.className = 'info'

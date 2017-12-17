@@ -1,16 +1,77 @@
+@font-face {
+  font-family: RobotoMono-Regular;
+  src: url('../font/RobotoMono-Regular.ttf');
+}
+
 $bodyMaxWidth: 850px;
 $primaryColor: #42b983;
+$primaryTextColor: #303133;
+$normalTextColor: #606266;
+$secondaryTextColor: #909399;
+$boderClolr:#DCDFE6;
 body,
 html {
   margin: 0;
   font-size: 15px;
   font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
+  color: $normalTextColor;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $primaryTextColor;
 }
 
 html a {
   text-decoration: none;
   color: $primaryColor;
   font-weight: 600;
+}
+
+.vexo-main {
+  max-width: $bodyMaxWidth;
+  margin: 170px auto 0;
+}
+
+.hljs {
+  font-size: 0.9em;
+  padding: 1em;
+  font-family: RobotoMono-Regular;
+  .hljs-name,
+  .hljs-tag {
+    color: #2973b7
+  }
+}
+
+.post-container {
+  #post-header {
+    text-align: center;
+    .title {
+      font-weight: 500;
+    }
+    .info,
+    a {
+      font-weight: 400;
+      color: $secondaryTextColor;
+    }
+    a {
+      text-decoration: underline;
+    }
+    margin-bottom: 50px;
+  }
+  article {
+    h2 {
+      position: relative;
+    }
+    h2:before {
+      content: '#';
+      color: $primaryColor;
+      position: absolute;
+      left: -1em;
+    }
+  }
 }
 
 .ertical-center-content,
