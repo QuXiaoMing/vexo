@@ -35,9 +35,10 @@ html a {
   margin: 170px auto 0;
 }
 
-.hljs {
+.language-html, .hljs {
   font-size: 0.9em;
   padding: 1em;
+  background-color: #f8f8f8;
   font-family: RobotoMono-Regular;
   .hljs-name,
   .hljs-tag {

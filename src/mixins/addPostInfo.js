@@ -6,9 +6,20 @@ import hljs from 'highlight.js'
 export default {
   mounted () {
     this.setInfo()
-    hljs.initHighlightingOnLoad()
+    this.$nextTick(() => {
+      // hljs.initHighlightingOnLoad()
+      this.highlightCode()
+    })
   },
   methods: {
+    highlightCode () {
+      let code = document.querySelectorAll('article code')
+      if (code && code.length) {
+        code.forEach(element => {
+          hljs.highlightBlock(element)
+        })
+      }
+    },
     setInfo () {
       let infoBox = document.createElement('div')
       infoBox.id = 'post-header'
