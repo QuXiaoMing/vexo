@@ -2,7 +2,7 @@
  * Add Title, Tags, Date for post pages
  * $route.meta is Required
  */
-// import hljs from 'highlight.js'
+import hljs from 'highlight.js'
 export default {
   mounted() {
     this.setInfo()

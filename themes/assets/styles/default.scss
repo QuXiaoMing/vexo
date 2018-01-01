@@ -51,6 +51,7 @@ html a {
   margin: 0 0.5em;
   color: #e96900;
 }
+// 文章样式
 .post-container {
   #post-header {
     text-align: center;
@@ -76,6 +77,11 @@ html a {
       color: $primaryColor;
       position: absolute;
       left: -1em;
+    }
+    h3 {
+      border-left: 3px solid $primaryColor;
+      text-indent: 0.5em;
+      margin-top: 20px;
     }
   }
 }
