@@ -2,13 +2,7 @@
   font-family: RobotoMono-Regular;
   src: url('../font/RobotoMono-Regular.ttf');
 }
-
-$bodyMaxWidth: 850px;
-$primaryColor: #42b983;
-$primaryTextColor: #303133;
-$normalTextColor: #606266;
-$secondaryTextColor: #909399;
-$boderClolr:#DCDFE6;
+@import './var.scss';
 body,
 html {
   margin: 0;
@@ -16,7 +10,21 @@ html {
   font-family: Source Sans Pro, Helvetica Neue, Arial, sans-serif;
   color: $normalTextColor;
 }
-
+html {
+  min-height: 100vh;
+  padding-bottom: 120px;
+  position: relative;
+  box-sizing: border-box;
+}
+.vexo-footer{
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  background-color: #f5f5f5;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
 h1,
 h2,
 h3,
@@ -32,7 +40,7 @@ html a {
 
 .vexo-main {
   max-width: $bodyMaxWidth;
-  margin: 170px auto 0;
+  margin: 170px auto 70px;
 }
 
 .code-inline,

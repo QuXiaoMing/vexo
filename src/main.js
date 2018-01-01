@@ -8,6 +8,7 @@ import 'normalize.css'
 import 'highlight.js/styles/atom-one-light.css'
 import '../themes/assets/styles/default.scss'
 Object.keys(Modules).forEach((key) => {
+  console.log(`vexo-${key}`, Modules[key])
   Vue.component(`vexo-${key}`, Modules[key])
 })
 Vue.use(VueRouter)
@@ -15,9 +16,6 @@ const router = new VueRouter({
   routes
 })
 router.afterEach((to, from) => {
-  // ...
-  console.log('afterEach', to.meta)
-  // document.querySelector('#post-header').innerHTML = JSON.stringify(to.meta)
 })
 console.log(router)
 new Vue({

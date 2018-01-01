@@ -1,10 +1,10 @@
 <template>
   <vexo-layout>
     <vexo-header slot="header"></vexo-header>
-    <div class="post-container" slot="main">
+    <div class="post-container">
       <router-view></router-view>
     </div>
-    <vexo-header slot="footer"></vexo-header>
+    <vexo-footer slot="footer"></vexo-footer>
   </vexo-layout>
 </template>
 <script>

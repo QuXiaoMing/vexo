@@ -5,14 +5,14 @@
     </header>
     <div class="vexo-main">
       <div class="left">
-        <slot name="main"></slot>
+        <slot></slot>
       </div>
       <div class="vexo-sidebar">
         <slot name="sidebar"></slot>
       </div>
     </div>
-    <footer>
-      <slot name="vexo-footer"></slot>
+    <footer class="vexo-footer">
+      <slot name="footer"></slot>
     </footer>
   </div>
 </template>
