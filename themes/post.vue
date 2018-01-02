@@ -4,12 +4,18 @@
     <div class="post-container">
       <router-view></router-view>
     </div>
+    <div id="side" slot="sidebar"></div>
     <vexo-footer slot="footer"></vexo-footer>
   </vexo-layout>
 </template>
 <script>
 export default {
   // comments
+  watch: {
+    $route () {
+      console.log('$route', this.$route)
+    }
+  }
 }
 </script>
 
