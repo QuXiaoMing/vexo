@@ -1,4 +1,7 @@
 # vexo
+
+![Build](https://travis-ci.org/QuXiaoMing/vexo.svg?branch=master)
+
 A simple blog framework, powered by Vue, webpeck & Node.js.
 
 ## Features
@@ -23,6 +26,7 @@ npm run deploy
 ## TODO
 - [X] Load Markdown
 - [X] Generate Blog
+- [X] Continuous Integration (Travis CI)
 - [ ] Themes
 - [ ] One-command deploy to GitHub Pages
 
