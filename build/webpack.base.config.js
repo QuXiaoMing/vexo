@@ -19,14 +19,16 @@ module.exports = {
     filename: 'js/[name].js'
   },
   resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.js'
+      vue$: 'vue/dist/vue.js',
+      '@': resolve(`src/`)
     }
   },
   devServer: {
-    contentBase: "./public",//本地服务器所加载的页面所在的目录
-    historyApiFallback: true,//不跳转
-    inline: true,//实时刷新,
+    contentBase: './public', //本地服务器所加载的页面所在的目录
+    historyApiFallback: true, //不跳转
+    inline: true, //实时刷新,
     hot: true
   },
   module: {
@@ -35,7 +37,7 @@ module.exports = {
         test: /\.vue$/,
         use: [
           {
-            loader: "vue-loader"
+            loader: 'vue-loader'
           }
         ]
       },
@@ -43,12 +45,12 @@ module.exports = {
         test: /\.md$/,
         use: [
           {
-            loader: "vue-markdown-loader",
+            loader: 'vue-markdown-loader',
             options: {
               wrapper: 'article',
-              preprocess: function (markdownIt, source) {
+              preprocess: function(markdownIt, source) {
                 return compileMD(source)
-              },
+              }
             }
           }
         ]
@@ -56,27 +58,30 @@ module.exports = {
       {
         test: /(\.js)$/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         },
         exclude: /node_modules/
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
+          fallback: 'style-loader',
+          use: 'css-loader'
         })
       },
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }],
-          // use style-loader in development 
-          fallback: "style-loader"
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'sass-loader'
+            }
+          ],
+          // use style-loader in development
+          fallback: 'style-loader'
         })
       },
       {
@@ -105,7 +110,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('css/[name].css'),
-  ]
+  plugins: [new ExtractTextPlugin('css/[name].css')]
 }
