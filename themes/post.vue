@@ -9,8 +9,10 @@
   </vexo-layout>
 </template>
 <script>
+import mixins from '../src/mixins/addPostInfo'
 export default {
   // comments
+  mixins: [mixins],
   watch: {
     $route () {
       console.log('$route', this.$route)
