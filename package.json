@@ -4,13 +4,16 @@
   "description": "vexo",
   "scripts": {
     "start": "webpack",
+    "deploy": "gh-pages -d dist",
     "dev": "node build/dev-server.js",
     "build": "set NODE_ENV=production && webpack --config ./build/webpack.pro.config.js --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://quxiaoming.github.io",
   "author": "shellming",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "highlight.js": "^9.12.0",
     "normalize.css": "^7.0.0",
     "vue": "^2.5.8",
