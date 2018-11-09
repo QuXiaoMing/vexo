@@ -4,7 +4,7 @@
     © 2017 | Shellming
   </div>
   <div class="info">
-    骄傲的采用 <a href="https://github.com/QuXiaoMing/vexo">Vexo</a>
+    Powered By <a href="https://github.com/QuXiaoMing/vexo">Vexo</a>
   </div>
 </div>
 </template>

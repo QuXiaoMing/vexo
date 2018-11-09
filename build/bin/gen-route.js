@@ -38,7 +38,7 @@ function genHeader(article) {
 /**
  * 匹配标签，生成文章描述
  */
-function genDesc (article) {
+function genDesc(article) {
   let desc = article
     .replace(/^---[\s\S]*?---/g, '')
     .match(/[\s\S]*?<!-- more -->/)
@@ -84,5 +84,7 @@ fs.readdir(path.resolve(process.cwd(), './resource'), (err, files) => {
    */
   fs.writeFile(path.resolve(process.cwd(), './dataBase/articleList.json'), JSON.stringify({
     data
-  }));
+  }), (ret) => {
+    console.log('writeFile', ret);
+  });
 })
